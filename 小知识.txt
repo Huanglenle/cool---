@@ -1,0 +1,1 @@
+ 1.给非a标签添加超链接  <button onclick="window.location.href='index.html'" class="btn btn-info btn-round-ss">再次购买</button>
