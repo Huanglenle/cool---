@@ -13,22 +13,21 @@ var clippingRegion = null
 
 image.src = "111.jpg";
 image.onload = function(e){
-	//³õÊ¼»¯
 	initCanvas();
-   
-
-
 }
 
+//用于重置 及 初始化
 function initCanvas(){
-	  clippingRegion = {	x:Math.random()*(canvas.width-2*radius)+radius ,
-	  					y:Math.random()*(canvas.height-2*radius)+radius ,
-							r:radius
-						}
-
+	clippingRegion = {	
+	  	x:Math.random()*(canvas.width-2*radius)+radius ,
+	  	y:Math.random()*(canvas.height-2*radius)+radius ,
+		r:radius
+	}
 	draw(image);
 }
 
+
+//设置canvas 剪切形状
 function setClippingRegion(){
 	context.beginPath();
 	context.arc( clippingRegion.x , clippingRegion.y ,clippingRegion.r , 0 , Math.PI*2 ,false);
@@ -47,6 +46,9 @@ function draw( image , clippingRegion ){
 	//×´Ì¬»Ö¸´
 	context.restore();
 }
+
+
+//设置动画
 var timer = null;
 
 function show(){
